@@ -56,7 +56,7 @@ Now open **http://localhost:3000** in your browser. 🎨
 This project is licensed under the **MIT License**. Feel free to use and modify! 🎉
 
 ## 👨‍💻 Author
-**Venky** - [GitHub](https://github.com/venkyok) | [Twitter](https://twitter.com/venky)
+**Venky** - [GitHub](https://github.com/venkyok) | [Twitter](https://x.com/Venky3K_)
 
 💙 If you like this project, don't forget to give it a **star ⭐** on GitHub!
 
