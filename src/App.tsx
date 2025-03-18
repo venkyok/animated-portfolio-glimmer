@@ -25,17 +25,17 @@ const App = () => (
         <BrowserRouter>
           <Layout>
             <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/works" element={<Works />} />
-            <Route path="/blog" element={<Blog />} />
-            <Route path="/about" element={<About />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
+              <Route path="/" element={<Index />} />
+              <Route path="/works" element={<Works />} />
+              <Route path="/blog" element={<Blog />} />
+              <Route path="/about" element={<About />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
           </Layout>
         </BrowserRouter>
       </TooltipProvider>
     </QueryClientProvider>
-  </>
+  </div>
 );
 
 export default App;
