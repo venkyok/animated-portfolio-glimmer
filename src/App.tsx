@@ -16,24 +16,26 @@ const queryClient = new QueryClient();
 import { LuminousCursor } from "./components/LuminousCursor";
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <LuminousCursor />
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Layout>
-          <Routes>
+  <>
+    <LuminousCursor />
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Layout>
+            <Routes>
             <Route path="/" element={<Index />} />
             <Route path="/works" element={<Works />} />
             <Route path="/blog" element={<Blog />} />
             <Route path="/about" element={<About />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </Layout>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+          </Layout>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </>
 );
 
 export default App;

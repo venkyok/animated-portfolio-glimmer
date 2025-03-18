@@ -10,24 +10,32 @@ export function LuminousCursor() {
     };
 
     window.addEventListener('mousemove', updateMousePosition);
-
-    return () => {
-      window.removeEventListener('mousemove', updateMousePosition);
-    };
+    return () => window.removeEventListener('mousemove', updateMousePosition);
   }, []);
 
   return (
     <div 
+      className="cursor-gradient"
       style={{
         position: 'fixed',
         top: 0,
         left: 0,
-        width: '100vw',
-        height: '100vh',
+        right: 0,
+        bottom: 0,
         pointerEvents: 'none',
-        zIndex: -9999,
-        background: `radial-gradient(800px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent)`,
+        zIndex: -1,
       }}
-    />
+    >
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: 0,
+          right: 0,
+          bottom: 0,
+          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent)`,
+        }}
+      />
+    </div>
   );
 }
