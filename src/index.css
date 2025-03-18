@@ -93,7 +93,11 @@
   }
 
   body {
-    @apply bg-navy text-white font-sans;
+    @apply bg-navy text-white font-sans h-screen overflow-hidden;
+  }
+
+  #root {
+    @apply h-full;
   }
 
   .very-text-outline {

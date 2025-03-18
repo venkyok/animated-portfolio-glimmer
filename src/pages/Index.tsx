@@ -40,8 +40,8 @@ const Index = () => {
       </div>
 
       {/* Hero section */}
-      <section ref={heroRef} className="relative z-10 py-8 md:py-12">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+      <section ref={heroRef} className="relative z-10 h-[calc(100vh-80px)] flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}

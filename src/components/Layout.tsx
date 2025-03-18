@@ -14,8 +14,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
 
   return (
-    <div className="min-h-screen overflow-hidden bg-navy">
-      <div className="max-w-7xl mx-auto px-2 sm:px-4">
+    <div className="h-screen flex flex-col bg-navy">
+      <div className="w-full px-2 sm:px-4">
         <header className="py-3">
           <div className="flex justify-between items-center">
             <Link to="/" className="group flex items-center">
