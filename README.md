@@ -1,69 +1,62 @@
-# Welcome to your Lovable project
+# 🚀 Animated Portfolio - Glimmer
 
-## Project info
+Welcome to **Animated Portfolio - Glimmer** ✨— a modern, sleek, and highly customizable portfolio built with **React, TypeScript, Tailwind CSS, and Framer Motion**. This portfolio is designed to showcase your projects, blog posts, and personal details in a visually appealing way.
 
-**URL**: https://lovable.dev/projects/58d6f1d8-35f9-4842-b8be-b73ebeaa080f
+## 🔥 Features
+- **Beautiful UI** - A modern and responsive design
+- **Smooth Animations** powered by Framer Motion
+- **React Router** for seamless navigation
+- **Dynamic Content Rendering** using React Components
+- **SEO Optimized** with meta tags
+- **Fast & Scalable** using Next.js (if migrated in the future)
 
-## How can I edit this code?
+## 📸 Preview
 
-There are several ways of editing your application.
 
-**Use Lovable**
+## 🛠️ Tech Stack
+- **Frontend**: React, TypeScript, Tailwind CSS
+- **Animations**: Framer Motion
+- **State Management**: React Query
+- **Routing**: React Router DOM
+- **Toasts**: Sonner & Toaster
 
-Simply visit the [Lovable Project](https://lovable.dev/projects/58d6f1d8-35f9-4842-b8be-b73ebeaa080f) and start prompting.
 
-Changes made via Lovable will be committed automatically to this repo.
-
-**Use your preferred IDE**
-
-If you want to work locally using your own IDE, you can clone this repo and push changes. Pushed changes will also be reflected in Lovable.
-
-The only requirement is having Node.js & npm installed - [install with nvm](https://github.com/nvm-sh/nvm#installing-and-updating)
-
-Follow these steps:
-
-```sh
-# Step 1: Clone the repository using the project's Git URL.
-git clone <YOUR_GIT_URL>
-
-# Step 2: Navigate to the project directory.
-cd <YOUR_PROJECT_NAME>
-
-# Step 3: Install the necessary dependencies.
-npm i
-
-# Step 4: Start the development server with auto-reloading and an instant preview.
-npm run dev
 ```
 
-**Edit a file directly in GitHub**
+## 🚀 Getting Started
+### 1️⃣ Clone the repository
+```sh
+git clone https://github.com/venkyok/animated-portfolio-glimmer.git
+cd animated-portfolio-glimmer
+```
 
-- Navigate to the desired file(s).
-- Click the "Edit" button (pencil icon) at the top right of the file view.
-- Make your changes and commit the changes.
+### 2️⃣ Install dependencies
+```sh
+yarn install  # or npm install
+```
 
-**Use GitHub Codespaces**
+### 3️⃣ Start the development server
+```sh
+yarn dev  # or npm run dev
+```
+Now open **http://localhost:3000** in your browser. 🎨
 
-- Navigate to the main page of your repository.
-- Click on the "Code" button (green button) near the top right.
-- Select the "Codespaces" tab.
-- Click on "New codespace" to launch a new Codespace environment.
-- Edit files directly within the Codespace and commit and push your changes once you're done.
+## 🎨 Customization
+- Update the **src/pages/** files to add your own content.
+- Modify the **src/components/Layout.tsx** for layout changes.
+- Replace images in **src/assets/**.
 
-## What technologies are used for this project?
+## 📌 Roadmap
+- [ ] Add Next.js support for better performance
+- [ ] Improve accessibility (A11Y)
+- [ ] Add a contact form with email integration
+- [ ] Support multi-language translation
 
-This project is built with .
+## 📜 License
+This project is licensed under the **MIT License**. Feel free to use and modify! 🎉
 
-- Vite
-- TypeScript
-- React
-- shadcn-ui
-- Tailwind CSS
+## 👨‍💻 Author
+**Venky** - [GitHub](https://github.com/venkyok) | [Twitter](https://twitter.com/venky)
 
-## How can I deploy this project?
+💙 If you like this project, don't forget to give it a **star ⭐** on GitHub!
 
-Simply open [Lovable](https://lovable.dev/projects/58d6f1d8-35f9-4842-b8be-b73ebeaa080f) and click on Share -> Publish.
-
-## I want to use a custom domain - is that possible?
-
-We don't support custom domains (yet). If you want to deploy your project under your own domain then we recommend using Netlify. Visit our docs for more details: [Custom domains](https://docs.lovable.dev/tips-tricks/custom-domain/)
