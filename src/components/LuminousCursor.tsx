@@ -18,13 +18,13 @@ export function LuminousCursor() {
   }, []);
 
   return (
-    <div className="fixed inset-0 -z-50 overflow-hidden pointer-events-none">
+    <div className="fixed top-0 left-0 w-full h-full -z-[1] pointer-events-none">
       {positions.map((pos, index) => (
         <div
           key={`cursor-${pos.x}-${pos.y}-${index}`}
-          className="absolute inset-0 transition-opacity duration-500"
+          className="absolute top-0 left-0 w-full h-full"
           style={{
-            background: `radial-gradient(${600 - index * 100}px at ${pos.x}px ${pos.y}px, rgba(29, 78, 216, ${0.15 - index * 0.02}), transparent ${80 - index * 10}%)`,
+            background: `radial-gradient(600px at ${pos.x}px ${pos.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
             opacity: 1 - (index * 0.2)
           }}
         />
