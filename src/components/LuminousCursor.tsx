@@ -2,33 +2,26 @@
 import { useEffect, useState } from 'react';
 
 export function LuminousCursor() {
-  const [positions, setPositions] = useState<Array<{ x: number; y: number }>>([]);
-  const maxTrails = 5;
+  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
   useEffect(() => {
-    const updateCursor = (e: MouseEvent) => {
-      setPositions(prev => {
-        const newPositions = [...prev, { x: e.clientX, y: e.clientY }];
-        return newPositions.slice(-maxTrails);
-      });
+    const updateMousePosition = (ev: MouseEvent) => {
+      setMousePosition({ x: ev.clientX, y: ev.clientY });
     };
 
-    window.addEventListener('mousemove', updateCursor);
-    return () => window.removeEventListener('mousemove', updateCursor);
+    window.addEventListener('mousemove', updateMousePosition);
+
+    return () => {
+      window.removeEventListener('mousemove', updateMousePosition);
+    };
   }, []);
 
   return (
-    <div className="fixed top-0 left-0 w-full h-full -z-[1] pointer-events-none">
-      {positions.map((pos, index) => (
-        <div
-          key={`cursor-${pos.x}-${pos.y}-${index}`}
-          className="absolute top-0 left-0 w-full h-full"
-          style={{
-            background: `radial-gradient(600px at ${pos.x}px ${pos.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
-            opacity: 1 - (index * 0.2)
-          }}
-        />
-      ))}
-    </div>
+    <div 
+      className="fixed inset-0 -z-10 pointer-events-none overflow-hidden"
+      style={{
+        background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent 80%)`,
+      }}
+    />
   );
 }
