@@ -33,7 +33,7 @@ export function LuminousCursor() {
           left: 0,
           right: 0,
           bottom: 0,
-          background: `radial-gradient(600px at ${mousePosition.x}px ${mousePosition.y}px, rgba(29, 78, 216, 0.15), transparent)`,
+          background: `radial-gradient(800px at ${mousePosition.x}px ${mousePosition.y}px, rgba(155, 135, 245, 0.15), rgba(26, 31, 44, 0.1))`,
         }}
       />
     </div>
