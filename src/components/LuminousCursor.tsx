@@ -2,40 +2,31 @@
 import { useEffect, useState } from 'react';
 
 export function LuminousCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
+  const [position, setPosition] = useState({ x: -100, y: -100 });
 
   useEffect(() => {
-    const updateMousePosition = (ev: MouseEvent) => {
-      setMousePosition({ x: ev.clientX, y: ev.clientY });
+    const handleMove = (e: MouseEvent) => {
+      setPosition({ x: e.clientX, y: e.clientY });
     };
 
-    window.addEventListener('mousemove', updateMousePosition);
-    return () => window.removeEventListener('mousemove', updateMousePosition);
+    window.addEventListener('mousemove', handleMove);
+    return () => window.removeEventListener('mousemove', handleMove);
   }, []);
 
   return (
     <div 
-      className="cursor-gradient"
       style={{
         position: 'fixed',
-        top: 0,
-        left: 0,
-        right: 0,
-        bottom: 0,
+        top: '0',
+        left: '0',
+        width: '100vw',
+        height: '100vh',
         pointerEvents: 'none',
-        zIndex: -1,
-      }}
-    >
-      <div
-        style={{
-          position: 'absolute',
-          top: 0,
-          left: 0,
-          right: 0,
-          bottom: 0,
-          background: `radial-gradient(800px at ${mousePosition.x}px ${mousePosition.y}px, rgba(155, 135, 245, 0.15), rgba(26, 31, 44, 0.1))`,
-        }}
-      />
-    </div>
+        zIndex: 0,
+        '--x': `${position.x}px`,
+        '--y': `${position.y}px`,
+      } as React.CSSProperties}
+      className="cursor-glow"
+    />
   );
 }

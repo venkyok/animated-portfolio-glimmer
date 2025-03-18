@@ -1,4 +1,13 @@
 
+.cursor-glow {
+  background: radial-gradient(
+    800px at var(--x) var(--y),
+    rgba(155, 135, 245, 0.15),
+    transparent 80%
+  );
+}
+
+
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;

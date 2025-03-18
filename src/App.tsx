@@ -16,9 +16,9 @@ const queryClient = new QueryClient();
 import { LuminousCursor } from "./components/LuminousCursor";
 
 const App = () => (
-  <>
-    <LuminousCursor />
+  <div style={{ position: 'relative' }}>
     <QueryClientProvider client={queryClient}>
+      <LuminousCursor />
       <TooltipProvider>
         <Toaster />
         <Sonner />
