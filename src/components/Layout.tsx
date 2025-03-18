@@ -15,8 +15,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <div className="min-h-screen overflow-hidden bg-navy">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <header className="py-6">
+      <div className="max-w-7xl mx-auto px-2 sm:px-4">
+        <header className="py-3">
           <div className="flex justify-between items-center">
             <Link to="/" className="group flex items-center">
               <div className="w-12 h-12 overflow-hidden rounded-full bg-purple-dark border-2 border-purple transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple/30">
