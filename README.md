@@ -1,6 +1,6 @@
-# 🚀 Animated Portfolio - Glimmer
+# 🚀 Portfolio - Glimmer
 
-Welcome to **Animated Portfolio - Glimmer** ✨— a modern, sleek, and highly customizable portfolio built with **React, TypeScript, Tailwind CSS, and Framer Motion**. This portfolio is designed to showcase your projects, blog posts, and personal details in a visually appealing way.
+Welcome to ** Portfolio - Glimmer** ✨— a modern, sleek, and highly customizable portfolio built with **React, TypeScript, Tailwind CSS, and Framer Motion**. This portfolio is designed to showcase your projects, blog posts, and personal details in a visually appealing way.
 
 ## 🔥 Features
 - **Beautiful UI** - A modern and responsive design
