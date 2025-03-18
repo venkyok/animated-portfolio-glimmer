@@ -33,15 +33,15 @@ const Index = () => {
   }, []);
 
   return (
-    <div className="pt-16 pb-24">
+    <div className="pt-6 pb-2">
       {/* Background text */}
       <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
         <div className="very-text-outline giant-text select-none">VENKY</div>
       </div>
 
       {/* Hero section */}
-      <section ref={heroRef} className="relative z-10 h-[calc(100vh-80px)] px-6 sm:px-8 max-w-7xl mx-auto flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
+      <section ref={heroRef} className="relative z-10 h-[calc(100vh-80px)] px-4 sm:px-4 max-w-7xl mx-auto flex items-center">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-18 items-center w-full">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
@@ -92,7 +92,7 @@ const Index = () => {
             <img 
               src="public/lovable-uploads/2d332a00-56ad-4a42-bcfe-8f9d494fbe61.png" 
               alt="Profile" 
-              className="hero-image relative z-10 h-full object-contain transition-transform duration-200 ease-out"
+              className="hero-image relative z-10 h-full mt-4 object-contain transition-transform duration-200 ease-out"
             />
           </motion.div>
         </div>

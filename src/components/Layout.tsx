@@ -14,8 +14,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <div className="h-screen flex flex-col bg-navy">
-      <div className="w-full px-6 sm:px-8 max-w-7xl mx-auto">
-        <header className="py-6">
+      <div className="w-full px-4 sm:px-4 max-w-7xl mx-auto">
+        <header className="pt-12 pb-2">
           <div className="flex justify-between items-center">
             <Link to="/" className="group flex items-center">
               <div className="w-16 h-16 overflow-hidden rounded-full bg-purple-dark border-2 border-purple transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple/30">
@@ -57,9 +57,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         </header>
       </div>
       <div className="flex-1 overflow-y-auto overflow-x-hidden">
-        <div className="w-full px-6 sm:px-8 max-w-7xl mx-auto">
+        <div className="w-full px-6 sm:px-4 max-w-7xl mx-auto">
           <main>{children}</main>
-          <footer className="py-6 mt-12 text-center text-white/40 text-sm">
+          <footer className="py-6 mt-2 text-center text-white/40 text-sm">
             <p>© {new Date().getFullYear()} Ammati Venkatesh</p>
           </footer>
         </div>
