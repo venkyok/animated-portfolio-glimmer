@@ -5,8 +5,8 @@ import { FileText } from "lucide-react";
 
 const navItems = [
   { name: "Home", path: "/" },
-  { name: "Works", path: "/works" },
-  { name: "Blog", path: "/blog" },
+  { name: "Projects", path: "/works" },
+  { name: "Skills", path: "/blog" },
   { name: "About", path: "/about" },
 ];
 
@@ -21,7 +21,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             <Link to="/" className="group flex items-center">
               <div className="w-12 h-12 overflow-hidden rounded-full bg-purple-dark border-2 border-purple transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple/30">
                 <img
-                  src="public/lovable-uploads/33e92bf7-10b1-4f87-845d-2ec84cbd98cb.png"
+                  src="public/lovable-uploads/2d332a00-56ad-4a42-bcfe-8f9d494fbe61.png"
                   alt="Profile"
                   className="w-full h-full object-cover"
                 />
@@ -46,11 +46,13 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </nav>
 
             <a
-              href="#"
+              href="https://github.com/venkyok"
+              target="_blank"
+              rel="noopener noreferrer"
               className="flex items-center space-x-2 py-2 px-4 rounded-full bg-opacity-10 border border-white/10 bg-white/5 text-white hover:bg-white/10 transition-all shadow-lg shadow-purple/5 btn-download"
             >
               <FileText className="w-4 h-4" />
-              <span className="text-sm font-medium">Download Resume & Portfolio</span>
+              <span className="text-sm font-medium">View Full Resume</span>
             </a>
           </div>
         </header>
@@ -58,7 +60,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <main>{children}</main>
 
         <footer className="py-6 mt-12 text-center text-white/40 text-sm">
-          <p>© {new Date().getFullYear()} Portfolio</p>
+          <p>© {new Date().getFullYear()} Ammati Venkatesh</p>
         </footer>
       </div>
     </div>

@@ -36,7 +36,7 @@ const Index = () => {
     <div className="pt-16 pb-24">
       {/* Background text */}
       <div className="fixed inset-0 flex items-center justify-center pointer-events-none z-0 overflow-hidden">
-        <div className="very-text-outline giant-text select-none">VERNY</div>
+        <div className="very-text-outline giant-text select-none">VENKY</div>
       </div>
 
       {/* Hero section */}
@@ -57,7 +57,7 @@ const Index = () => {
               >
                 <span className="text-yellow-400">Hello</span> 
                 <span className="text-yellow-400">👋</span>,
-                <br />I'm Sanqiu Shili
+                <br />I'm Ammati Venkatesh
               </motion.h1>
               
               <motion.p 
@@ -66,7 +66,7 @@ const Index = () => {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="text-xl text-purple font-medium uppercase tracking-wide"
               >
-                A BRAVE CLIMBER IN THE WORLD OF PRODUCT DESIGN
+                A PASSIONATE FULL-STACK DEVELOPER & PROBLEM SOLVER
               </motion.p>
             </div>
             
@@ -76,9 +76,9 @@ const Index = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="text-white/80 text-lg"
             >
-              A newcomer striving to climb the product design mountain.
-              <br />Equipped with boundless curiosity and focused exploratory spirit.
-              <br />Inspired by Smao's philosophy.
+              Computer Science enthusiast from Hyderabad, India.
+              <br />Building interactive web applications with modern technologies.
+              <br />Currently pursuing B.Tech in Computer Science (Data Science).
             </motion.p>
           </motion.div>
           
@@ -90,7 +90,7 @@ const Index = () => {
           >
             <div className="absolute w-[350px] h-[350px] lg:w-[400px] lg:h-[400px] rounded-full purple-circle-glow opacity-60 filter blur-xl"></div>
             <img 
-              src="public/lovable-uploads/457aaf18-3086-4f93-baa8-828c0ce370d7.png" 
+              src="public/lovable-uploads/2d332a00-56ad-4a42-bcfe-8f9d494fbe61.png" 
               alt="Profile" 
               className="hero-image relative z-10 h-full object-contain transition-transform duration-200 ease-out"
             />
