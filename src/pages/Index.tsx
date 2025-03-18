@@ -40,7 +40,7 @@ const Index = () => {
       </div>
 
       {/* Hero section */}
-      <section ref={heroRef} className="relative z-10 h-[calc(100vh-80px)] flex items-center">
+      <section ref={heroRef} className="relative z-10 min-h-[calc(100vh-80px)] py-12 flex items-center">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center w-full">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}

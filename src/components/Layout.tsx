@@ -1,4 +1,3 @@
-
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FileText } from "lucide-react";
@@ -56,13 +55,15 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </a>
           </div>
         </header>
-
-        <main>{children}</main>
-
-        <footer className="py-6 mt-12 text-center text-white/40 text-sm">
+      </div>
+      <div className="flex-1 overflow-y-auto">
+        <div className="w-full px-6 sm:px-8 max-w-7xl mx-auto">
+          <main>{children}</main>
+        </div>
+      </div>
+      <footer className="py-6 mt-12 text-center text-white/40 text-sm">
           <p>© {new Date().getFullYear()} Ammati Venkatesh</p>
         </footer>
-      </div>
     </div>
   );
 };
