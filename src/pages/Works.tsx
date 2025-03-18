@@ -5,14 +5,14 @@ import { motion } from "framer-motion";
 const projects = [
   {
     id: 1,
-    title: ""考培侠"移动端5.0-你从未见过的船新版本",
+    title: "考培侠移动端5.0-你从未见过的船新版本",
     image: "public/lovable-uploads/42e61094-21ce-4ebb-8fff-1192c8114a01.png",
     category: "UI-App",
     year: "2021"
   },
   {
     id: 2,
-    title: ""考培侠"部分运营活动海报与H5",
+    title: "考培侠部分运营活动海报与H5",
     image: "public/lovable-uploads/78ac5df7-a1a4-4ed5-a74c-0bed08617320.png",
     category: "平面-运营",
     year: "2021"
