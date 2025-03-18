@@ -1,41 +1,48 @@
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useCallback } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 export function LuminousCursor() {
-  const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [trail, setTrail] = useState<{ x: number; y: number; id: number }[]>([]);
+  
+  const throttle = useCallback((func: Function, limit: number) => {
+    let inThrottle: boolean;
+    return function(this: any, ...args: any[]) {
+      if (!inThrottle) {
+        func.apply(this, args);
+        inThrottle = true;
+        setTimeout(() => inThrottle = false, limit);
+      }
+    };
+  }, []);
 
   useEffect(() => {
-    const updateMousePosition = (e: MouseEvent) => {
-      setMousePosition({ x: e.clientX, y: e.clientY });
-
+    const updateMousePosition = throttle((e: MouseEvent) => {
       setTrail(prev => {
-        const newTrail = [...prev];
-        newTrail.push({ x: e.clientX, y: e.clientY, id: Date.now() });
-        return newTrail.slice(-8);
+        const newTrail = [...prev, { x: e.clientX, y: e.clientY, id: Date.now() }];
+        return newTrail.slice(-5); // Reduce number of trail points
       });
-    };
+    }, 16); // ~60fps throttle
 
     window.addEventListener('mousemove', updateMousePosition);
     return () => window.removeEventListener('mousemove', updateMousePosition);
-  }, []);
+  }, [throttle]);
 
   return (
     <AnimatePresence>
       {trail.map((point, index) => (
         <motion.div
           key={point.id}
-          initial={{ opacity: 0.5, scale: 1 }}
-          animate={{ opacity: 0.2 - index * 0.02, scale: 1 - index * 0.05 }}
+          initial={{ opacity: 0.3, scale: 1 }}
+          animate={{ opacity: 0.08 - index * 0.01, scale: 1 - index * 0.05 }}
           exit={{ opacity: 0 }}
           className="pointer-events-none fixed inset-0 z-50"
           style={{
-            background: `radial-gradient(300px at ${point.x}px ${point.y}px, rgba(29, 78, 216, 0.15), transparent 70%)`
+            background: `radial-gradient(200px at ${point.x}px ${point.y}px, rgba(29, 78, 216, 0.08), transparent 60%)`
           }}
           transition={{
-            type: "spring",
-            stiffness: 400,
-            damping: 40
+            type: "tween",
+            duration: 0.2,
+            ease: "linear"
           }}
         />
       ))}
