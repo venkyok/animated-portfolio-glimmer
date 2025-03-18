@@ -1,46 +1,66 @@
 
-import { useEffect, useState } from 'react';
-
-interface Position {
-  x: number;
-  y: number;
-  timestamp: number;
-}
+import { useEffect, useRef } from 'react';
+import { motion, useSpring, useMotionValue } from 'framer-motion';
 
 export function LuminousCursor() {
-  const [positions, setPositions] = useState<Position[]>([]);
-  const maxTrails = 8;
-  const trailDelay = 50; // milliseconds between each trail
+  const cursorX = useMotionValue(0);
+  const cursorY = useMotionValue(0);
+  const trails = useRef<{ x: any; y: any }[]>([]);
+  const maxTrails = 6;
+
+  // Create smooth spring animations for cursor
+  const springConfig = { damping: 25, stiffness: 200 };
+  for (let i = 0; i < maxTrails; i++) {
+    if (!trails.current[i]) {
+      trails.current[i] = {
+        x: useSpring(0, springConfig),
+        y: useSpring(0, springConfig)
+      };
+    }
+  }
 
   useEffect(() => {
-    let lastUpdate = 0;
-    
-    const updateCursor = (e: MouseEvent) => {
-      const now = Date.now();
-      
-      if (now - lastUpdate > trailDelay) {
-        setPositions(prev => {
-          const newPositions = [...prev, { x: e.clientX, y: e.clientY, timestamp: now }];
-          return newPositions.slice(-maxTrails);
-        });
-        lastUpdate = now;
-      }
+    const updateMousePosition = (e: MouseEvent) => {
+      cursorX.set(e.clientX);
+      cursorY.set(e.clientY);
     };
 
-    window.addEventListener('mousemove', updateCursor);
-    return () => window.removeEventListener('mousemove', updateCursor);
+    window.addEventListener('mousemove', updateMousePosition);
+    return () => window.removeEventListener('mousemove', updateMousePosition);
+  }, []);
+
+  // Update trail positions with delay
+  useEffect(() => {
+    const unsubX = cursorX.onChange(x => {
+      trails.current.forEach((trail, i) => {
+        setTimeout(() => {
+          trail.x.set(x);
+        }, i * 40);
+      });
+    });
+
+    const unsubY = cursorY.onChange(y => {
+      trails.current.forEach((trail, i) => {
+        setTimeout(() => {
+          trail.y.set(y);
+        }, i * 40);
+      });
+    });
+
+    return () => {
+      unsubX();
+      unsubY();
+    };
   }, []);
 
   return (
     <>
-      {positions.map((pos, index) => (
-        <div
-          key={pos.timestamp}
-          className="pointer-events-none fixed inset-0 z-50 transition-all duration-300 ease-out"
+      {trails.current.map((trail, index) => (
+        <motion.div
+          key={index}
+          className="pointer-events-none fixed inset-0 z-50"
           style={{
-            background: `radial-gradient(${400 - index * 40}px at ${pos.x}px ${pos.y}px, rgba(29, 78, 216, ${0.15 - index * 0.015}), transparent ${70 - index * 5}%)`,
-            opacity: 1 - (index * 0.1),
-            transform: `scale(${1 - index * 0.05})`,
+            background: `radial-gradient(${300 - index * 30}px at ${trail.x}px ${trail.y}px, rgba(29, 78, 216, ${0.12 - index * 0.015}), transparent ${60 - index * 4}%)`,
           }}
         />
       ))}
