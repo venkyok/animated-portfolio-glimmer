@@ -15,11 +15,11 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <div className="h-screen flex flex-col bg-navy">
-      <div className="w-full px-2 sm:px-4">
-        <header className="py-3">
+      <div className="w-full px-6 sm:px-8 max-w-7xl mx-auto">
+        <header className="py-6">
           <div className="flex justify-between items-center">
             <Link to="/" className="group flex items-center">
-              <div className="w-12 h-12 overflow-hidden rounded-full bg-purple-dark border-2 border-purple transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple/30">
+              <div className="w-16 h-16 overflow-hidden rounded-full bg-purple-dark border-2 border-purple transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple/30">
                 <img
                   src="public/lovable-uploads/2d332a00-56ad-4a42-bcfe-8f9d494fbe61.png"
                   alt="Profile"
@@ -33,7 +33,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`nav-link px-4 py-2 text-sm font-medium transition-colors duration-200 ${
+                  className={`nav-link px-4 py-2 text-base font-medium transition-colors duration-200 ${
                     location.pathname === item.path
                       ? "text-purple"
                       : "text-white/80 hover:text-white"
