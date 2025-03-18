@@ -1,4 +1,3 @@
-
 import React from "react";
 import { motion } from "framer-motion";
 import { Smartphone, Mail, Twitter, Globe } from "lucide-react";
@@ -12,7 +11,7 @@ const About = () => {
         transition={{ duration: 0.5 }}
         className="text-center mb-16"
       >
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">关于我</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">About Me</h1>
       </motion.div>
 
       <motion.div
@@ -22,8 +21,8 @@ const About = () => {
         className="max-w-3xl mx-auto bg-navy-light rounded-3xl p-8 md:p-12"
       >
         <div className="text-center mb-16">
-          <p className="text-xl font-medium text-white mb-2">增强效率，快乐摸鱼</p>
-          <p className="text-white/60">就随便写写，仅供参考</p>
+          <p className="text-xl font-medium text-white mb-2">Enhancing Efficiency, Enjoying Life</p>
+          <p className="text-white/60">Just some casual thoughts, for reference only</p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-16">
@@ -94,7 +93,7 @@ const About = () => {
           transition={{ duration: 0.5, delay: 0.7 }}
           className="text-center"
         >
-          <p className="text-lg font-medium text-purple">我爱Figma</p>
+          <p className="text-lg font-medium text-purple">I love Figma</p>
         </motion.div>
       </motion.div>
     </div>

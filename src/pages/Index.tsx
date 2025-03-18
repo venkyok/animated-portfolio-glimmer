@@ -55,9 +55,9 @@ const Index = () => {
                 transition={{ duration: 0.5, delay: 0.2 }}
                 className="text-5xl md:text-6xl font-bold"
               >
-                <span className="text-yellow-400">你好</span> 
+                <span className="text-yellow-400">Hello</span> 
                 <span className="text-yellow-400">👋</span>,
-                <br />我是三秋十李
+                <br />I'm Sanqiu Shili
               </motion.h1>
               
               <motion.p 
@@ -76,9 +76,9 @@ const Index = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="text-white/80 text-lg"
             >
-              一个在产品设计屈努力攀登的新生
-              <br />拥有一颗毫无边界的好奇心和一股心无旁骛的探索力
-              <br />这句话来自草帽Smao
+              A newcomer striving to climb the product design mountain.
+              <br />Equipped with boundless curiosity and focused exploratory spirit.
+              <br />Inspired by Smao's philosophy.
             </motion.p>
           </motion.div>
           

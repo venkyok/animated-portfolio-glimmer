@@ -11,7 +11,7 @@ const Blog = () => {
         transition={{ duration: 0.5 }}
         className="text-center mb-16"
       >
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">关于博客</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">About My Blog</h1>
       </motion.div>
 
       <motion.div
@@ -21,11 +21,11 @@ const Blog = () => {
         className="max-w-3xl mx-auto bg-navy-light rounded-3xl p-8 md:p-12"
       >
         <p className="text-white/80 mb-8 leading-relaxed">
-          由于早期研究的笔记工具时间的时间太多，导致我的笔记散落各地，比如有道云笔记、幕布、flomo、语雀等等，目前经过对比后，语雀的开放性和支持各种插入第三方工具的功能使我觉得目前是最适合作为我的知识库平台的，因此将来会一步一步将收集的素材整理起来，将来有时间将自己的网站开发出来的话，应该也会同步过来，一边收集，一边回顾，一边输出，一边消化。
+          I've experimented with many note-taking tools over the years, which has led to my notes being scattered across platforms like Youdao Cloud Notes, Mubu, Flomo, and Yuque. After comparing them all, I've found that Yuque's openness and support for third-party integrations makes it the most suitable platform for my knowledge base. I'll be gradually organizing my collected materials there, and when I have time to develop my own website, I'll likely sync content here as well—collecting, reviewing, outputting, and digesting as I go.
         </p>
 
         <div className="flex items-center space-x-2 text-white/60 mb-6">
-          <span>语雀地址:</span>
+          <span>Yuque address:</span>
           <a
             href="http://www.yuque.com/lisanqiu"
             target="_blank"

@@ -5,21 +5,21 @@ import { motion } from "framer-motion";
 const projects = [
   {
     id: 1,
-    title: "考培侠移动端5.0-你从未见过的船新版本",
+    title: "KaoPeiXia Mobile 5.0 - A Brand New Version",
     image: "public/lovable-uploads/42e61094-21ce-4ebb-8fff-1192c8114a01.png",
     category: "UI-App",
     year: "2021"
   },
   {
     id: 2,
-    title: "考培侠部分运营活动海报与H5",
+    title: "KaoPeiXia Marketing Campaigns & H5",
     image: "public/lovable-uploads/78ac5df7-a1a4-4ed5-a74c-0bed08617320.png",
-    category: "平面-运营",
+    category: "Graphic Design",
     year: "2021"
   },
   {
     id: 3,
-    title: "十李's 个人作品集",
+    title: "Shili's Personal Portfolio",
     image: "public/lovable-uploads/33e92bf7-10b1-4f87-845d-2ec84cbd98cb.png",
     category: "UI-App",
     year: "2020"
@@ -35,7 +35,7 @@ const Works = () => {
         transition={{ duration: 0.5 }}
         className="text-center mb-16"
       >
-        <h1 className="text-3xl md:text-4xl font-bold mb-4">系统性的作品集</h1>
+        <h1 className="text-3xl md:text-4xl font-bold mb-4">My Portfolio</h1>
       </motion.div>
 
       <motion.div
