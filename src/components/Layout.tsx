@@ -56,7 +56,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           </div>
         </header>
       </div>
-      <div className="flex-1 overflow-y-auto">
+      <div className="flex-1 overflow-y-auto overflow-x-hidden">
         <div className="w-full px-6 sm:px-8 max-w-7xl mx-auto">
           <main>{children}</main>
         </div>
