@@ -16,39 +16,12 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <div className="h-screen flex bg-navy">
-      {/* Left Sidebar */}
-      <div className="hidden md:flex flex-col w-64 p-6 bg-navy-light border-r border-white/10">
-        <Link to="/" className="group flex items-center mb-8">
-          <div className="w-16 h-16 overflow-hidden rounded-full bg-purple-dark border-2 border-purple transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple/30">
-            <img
-              src="/lovable-uploads/2d332a00-56ad-4a42-bcfe-8f9d494fbe61.png"
-              alt="Profile"
-              className="w-full h-full object-bottom object-cover ml-1"
-            />
-          </div>
-        </Link>
-        <nav className="flex flex-col space-y-2">
-          {navItems.map((item) => (
-            <Link
-              key={item.name}
-              to={item.path}
-              className={`px-4 py-2 text-base font-medium rounded-lg transition-colors duration-200 ${
-                location.pathname === item.path
-                  ? "bg-purple/10 text-purple"
-                  : "text-white/80 hover:text-white hover:bg-white/5"
-              }`}
-            >
-              {item.name}
-            </Link>
-          ))}
-        </nav>
-      </div>
 
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         <header className="w-full px-4 sm:px-4 pt-12 pb-2">
           <div className="flex justify-between items-center md:justify-end">
-            <Link to="/" className="group flex items-center md:hidden">
+            <Link to="/" className="group flex items-center">
               <div className="w-16 h-16 overflow-hidden rounded-full bg-purple-dark border-2 border-purple transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple/30">
                 <img
                   src="/lovable-uploads/2d332a00-56ad-4a42-bcfe-8f9d494fbe61.png"
@@ -60,7 +33,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
             <button 
               onClick={() => setIsOpen(true)}
-              className="md:hidden p-2 text-white hover:text-purple transition-colors"
+              className="p-2 text-white hover:text-purple transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="4" y1="12" x2="20" y2="12"></line>
