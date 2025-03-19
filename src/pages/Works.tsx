@@ -2,22 +2,22 @@ import React from "react";
 import { motion } from "framer-motion";
 const projects = [{
   id: 1,
-  title: "Full-Stack Chat Application",
+  title: " Phishing URL Detection",
   image: "public/lovable-uploads/42e61094-21ce-4ebb-8fff-1192c8114a01.png",
-  category: "Socket.IO, Node.js, React",
-  year: "2024"
+  category: "react TensorFlow",
+  year: "2025"
 }, {
   id: 2,
-  title: "Real-time Device Tracker",
+  title: "Bookmark Manager",
   image: "public/lovable-uploads/78ac5df7-a1a4-4ed5-a74c-0bed08617320.png",
-  category: "JavaScript, Node.js, Express.js",
-  year: "2023"
+  category: "SuperBase, React, express",
+  year: "2024"
 }, {
   id: 3,
-  title: "J.P. Morgan Software Engineering Virtual Experience",
+  title: "multi Ai",
   image: "public/lovable-uploads/33e92bf7-10b1-4f87-845d-2ec84cbd98cb.png",
-  category: "Web Development",
-  year: "2023"
+  category: "react,cleck AUTH,OpenAI SDK",
+  year: "2025"
 }];
 const Works = () => {
   return <div className="py-16">

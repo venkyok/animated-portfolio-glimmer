@@ -18,11 +18,11 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         <header className="pt-12 pb-2">
           <div className="flex justify-between items-center">
             <Link to="/" className="group flex items-center">
-              <div className="w-16 h-16 overflow-hidden rounded-full bg-purple-dark border-2 border-purple transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple/30">
+              <div className="w-20 h-20 overflow-hidden rounded-full bg-purple-dark border-2 border-purple transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple/30">
                 <img
-                  src="public/lovable-uploads/2d332a00-56ad-4a42-bcfe-8f9d494fbe61.png"
+                  src="./lovable-uploads/2d332a00-56ad-4a42-bcfe-8f9d494fbe61.png"
                   alt="Profile"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-bottom object-cover ml-1"
                 />
               </div>
             </Link>
@@ -45,7 +45,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </nav>
 
             <a
-              href="/resume.pdf"
+              href="/public/lovable-uploads/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
               className="flex items-center space-x-2 py-2 px-4 rounded-full bg-opacity-10 border border-white/10 bg-white/5 text-white hover:bg-white/10 transition-all shadow-lg shadow-purple/5 btn-download"

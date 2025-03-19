@@ -57,7 +57,7 @@ const Index = () => {
               >
                 <span className="text-yellow-400">Hello</span> 
                 <span className="text-yellow-400">👋</span>,
-                <br />I'm Ammati Venkatesh
+                <br />I'm Venkatesh
               </motion.h1>
               
               <motion.p 
@@ -66,7 +66,7 @@ const Index = () => {
                 transition={{ duration: 0.5, delay: 0.4 }}
                 className="text-xl text-purple font-medium uppercase tracking-wide"
               >
-                A PASSIONATE FULL-STACK DEVELOPER & PROBLEM SOLVER
+                A PASSIONATE Developer | Problem Solver | Tech Enthusiast
               </motion.p>
             </div>
             
@@ -76,23 +76,23 @@ const Index = () => {
               transition={{ duration: 0.5, delay: 0.6 }}
               className="text-white/80 text-lg"
             >
-              Computer Science enthusiast from Hyderabad, India.
+             
               <br />Building interactive web applications with modern technologies.
-              <br />Currently pursuing B.Tech in Computer Science (Data Science).
+              <br />Currently pursuing B.Tech in Computer Science .
             </motion.p>
           </motion.div>
           
           <motion.div 
-            initial={{ opacity: 0, scale: 0.95 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7, delay: 0.3 }}
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ duration: 0.3, delay: 0.1 }}
             className="relative h-[440px] lg:h-[500px] flex justify-center"
           >
             <div className="absolute w-[350px] h-[350px] lg:w-[400px] lg:h-[400px] rounded-full purple-circle-glow opacity-60 filter blur-xl"></div>
             <img 
-              src="public/lovable-uploads/2d332a00-56ad-4a42-bcfe-8f9d494fbe61.png" 
+              src="/lovable-uploads/u-removebg-preview.png" 
               alt="Profile" 
-              className="hero-image relative z-10 h-full mt-4 object-contain transition-transform duration-200 ease-out"
+              className="hero-image relative z-10 h-full w-[85%] mx-4 object-cover object-bottom transition-transform duration-200 ease-out"
             />
           </motion.div>
         </div>
