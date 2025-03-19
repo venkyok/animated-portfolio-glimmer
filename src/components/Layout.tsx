@@ -43,21 +43,20 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </div>
 
             <nav className="hidden md:flex items-center gap-6">
-                {navItems.map((item) => (
-                  <Link
-                    key={item.name}
-                    to={item.path}
-                    className={`text-base font-medium transition-colors duration-200 ${
-                      location.pathname === item.path
-                        ? "text-purple"
-                        : "text-white/80 hover:text-white"
-                    }`}
-                  >
-                    {item.name}
-                  </Link>
-                ))}
-              </nav>
-            </div>
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  className={`text-base font-medium transition-colors duration-200 ${
+                    location.pathname === item.path
+                      ? "text-purple"
+                      : "text-white/80 hover:text-white"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </nav>
 
             <a
               href="/lovable-uploads/resume.pdf"
