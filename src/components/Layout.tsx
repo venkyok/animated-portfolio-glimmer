@@ -47,11 +47,11 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 <Link
                   key={item.name}
                   to={item.path}
-                  className={`text-base font-medium transition-colors duration-200 ${
+                  className={`relative text-base font-medium transition-colors duration-200 ${
                     location.pathname === item.path
                       ? "text-purple"
                       : "text-white/80 hover:text-white"
-                  }`}
+                  } after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-purple after:transition-all after:duration-300 hover:after:w-full`}
                 >
                   {item.name}
                 </Link>
