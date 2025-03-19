@@ -17,9 +17,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   return (
     <div className="h-screen flex bg-navy">
       <div className="flex-1 flex flex-col">
-        <header className="w-full px-4 sm:px-4 pt-12 pb-2">
+        <header className="w-full px-4 sm:px-8 pt-12 pb-2">
           <div className="flex justify-between items-center">
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-8 pl-4">
               <button 
                 onClick={() => setIsOpen(true)}
                 className="md:hidden p-2 text-white hover:text-purple transition-colors"
@@ -62,7 +62,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               href="/lovable-uploads/resume.pdf"
               target="_blank"
               rel="noopener noreferrer"
-              className="flex items-center gap-2 py-2 px-4 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all"
+              className="flex items-center gap-2 py-2 px-4 mr-4 rounded-full bg-white/5 border border-white/10 text-white hover:bg-white/10 transition-all"
             >
               <FileText className="w-4 h-4" />
               <span className="text-sm font-medium">View Full Resume</span>
