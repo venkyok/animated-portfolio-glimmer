@@ -1,3 +1,4 @@
+
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { FileText } from "lucide-react";
@@ -15,6 +16,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <div className="h-screen flex bg-navy">
+      {/* Left Sidebar */}
       <div className="hidden md:flex flex-col w-64 p-6 bg-navy-light border-r border-white/10">
         <Link to="/" className="group flex items-center mb-8">
           <div className="w-16 h-16 overflow-hidden rounded-full bg-purple-dark border-2 border-purple transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple/30">
@@ -41,10 +43,11 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
           ))}
         </nav>
       </div>
+
+      {/* Main Content */}
       <div className="flex-1 flex flex-col">
-        <div className="w-full px-4 sm:px-4">
-          <header className="pt-12 pb-2">
-            <div className="flex justify-between items-center md:justify-end">
+        <header className="w-full px-4 sm:px-4 pt-12 pb-2">
+          <div className="flex justify-between items-center md:justify-end">
             <Link to="/" className="group flex items-center md:hidden">
               <div className="w-16 h-16 overflow-hidden rounded-full bg-purple-dark border-2 border-purple transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple/30">
                 <img
@@ -66,8 +69,19 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               </svg>
             </button>
 
-            <div className={`fixed inset-0 bg-black/50 z-50 transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsOpen(false)}>
-              <div className={`absolute right-0 top-0 h-full w-64 bg-navy-light p-6 shadow-xl transform transition-transform ${isOpen ? 'translate-x-0' : 'translate-x-full'}`} onClick={e => e.stopPropagation()}>
+            {/* Mobile Menu */}
+            <div 
+              className={`fixed inset-0 bg-black/50 z-50 transition-opacity ${
+                isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+              }`} 
+              onClick={() => setIsOpen(false)}
+            >
+              <div 
+                className={`absolute right-0 top-0 h-full w-64 bg-navy-light p-6 shadow-xl transform transition-transform ${
+                  isOpen ? 'translate-x-0' : 'translate-x-full'
+                }`} 
+                onClick={e => e.stopPropagation()}
+              >
                 <div className="flex flex-col space-y-4">
                   {navItems.map((item) => (
                     <Link
@@ -98,14 +112,15 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </a>
           </div>
         </header>
-      </div>
-      <div className="flex-1 overflow-y-auto overflow-x-hidden">
-        <div className="w-full px-6 sm:px-4 max-w-7xl mx-auto">
-          <main>{children}</main>
-          <footer className="py-6 mt-2 text-center text-white/40 text-sm">
-            <p>© {new Date().getFullYear()} Ammati Venkatesh</p>
-          </footer>
-        </div>
+
+        <main className="flex-1 overflow-y-auto overflow-x-hidden">
+          <div className="w-full px-6 sm:px-4 max-w-7xl mx-auto">
+            {children}
+            <footer className="py-6 mt-2 text-center text-white/40 text-sm">
+              <p>© {new Date().getFullYear()} Ammati Venkatesh</p>
+            </footer>
+          </div>
+        </main>
       </div>
     </div>
   );
