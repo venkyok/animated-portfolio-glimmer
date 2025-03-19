@@ -1,52 +1,43 @@
 
-import { useEffect, useState, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 
 export function LuminousCursor() {
   const cursorRef = useRef<HTMLDivElement>(null);
-  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const cursor = cursorRef.current;
     if (!cursor) return;
 
-    const handleMouseMove = (e: MouseEvent) => {
-      requestAnimationFrame(() => {
-        if (cursor) {
-          // Set the cursor to be centered around the mouse
-          const x = e.clientX - cursor.offsetWidth / 2;
-          const y = e.clientY - cursor.offsetHeight / 2;
-          cursor.style.transform = `translate(${x}px, ${y}px)`;
-          
-          if (!isVisible) setIsVisible(true);
-        }
-      });
+    const updateCursor = (e: MouseEvent) => {
+      const x = e.clientX;
+      const y = e.clientY;
+      cursor.style.transform = `translate(${x}px, ${y}px)`;
+      cursor.style.opacity = '1';
     };
 
     const handleMouseLeave = () => {
-      setIsVisible(false);
+      if (cursor) cursor.style.opacity = '0';
     };
 
-    document.addEventListener('mousemove', handleMouseMove);
+    const handleMouseEnter = () => {
+      if (cursor) cursor.style.opacity = '1';
+    };
+
+    document.addEventListener('mousemove', updateCursor);
     document.addEventListener('mouseleave', handleMouseLeave);
+    document.addEventListener('mouseenter', handleMouseEnter);
 
     return () => {
-      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mousemove', updateCursor);
       document.removeEventListener('mouseleave', handleMouseLeave);
+      document.removeEventListener('mouseenter', handleMouseEnter);
     };
-  }, [isVisible]);
+  }, []);
 
   return (
     <div 
       ref={cursorRef}
-      className={`custom-cursor-glow ${isVisible ? 'visible' : 'hidden'}`}
-      style={{
-        position: 'fixed',
-        pointerEvents: 'none',
-        zIndex: -1,
-        top: 0,
-        left: 0,
-        transition: 'opacity 0.3s ease',
-      }}
+      className="luminous-cursor"
     />
   );
 }
