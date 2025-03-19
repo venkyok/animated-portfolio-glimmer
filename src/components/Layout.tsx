@@ -40,8 +40,9 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                   />
                 </div>
               </Link>
+            </div>
 
-              <nav className="hidden md:flex items-center gap-6">
+            <nav className="hidden md:flex items-center gap-6">
                 {navItems.map((item) => (
                   <Link
                     key={item.name}
