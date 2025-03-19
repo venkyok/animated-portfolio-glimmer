@@ -3,19 +3,19 @@ import { motion } from "framer-motion";
 const projects = [{
   id: 1,
   title: " Phishing URL Detection",
-  image: "public/lovable-uploads/42e61094-21ce-4ebb-8fff-1192c8114a01.png",
+  image: "/lovable-uploads/42e61094-21ce-4ebb-8fff-1192c8114a01.png",
   category: "react TensorFlow",
   year: "2025"
 }, {
   id: 2,
   title: "Bookmark Manager",
-  image: "public/lovable-uploads/78ac5df7-a1a4-4ed5-a74c-0bed08617320.png",
+  image: "/lovable-uploads/78ac5df7-a1a4-4ed5-a74c-0bed08617320.png",
   category: "SuperBase, React, express",
   year: "2024"
 }, {
   id: 3,
   title: "multi Ai",
-  image: "public/lovable-uploads/33e92bf7-10b1-4f87-845d-2ec84cbd98cb.png",
+  image: "/lovable-uploads/33e92bf7-10b1-4f87-845d-2ec84cbd98cb.png",
   category: "react,cleck AUTH,OpenAI SDK",
   year: "2025"
 }];
