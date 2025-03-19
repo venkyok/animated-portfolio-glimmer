@@ -11,6 +11,7 @@ const navItems = [
 
 const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const location = useLocation();
+  const [isOpen, setIsOpen] = React.useState(false);
 
   return (
     <div className="h-screen flex flex-col bg-navy">
@@ -43,6 +44,38 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               ))}
               <div className="nav-separator mx-2 text-white/20">/</div>
             </nav>
+
+            <button 
+              onClick={() => setIsOpen(true)}
+              className="md:hidden p-2 text-white hover:text-purple transition-colors"
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <line x1="4" y1="12" x2="20" y2="12"></line>
+                <line x1="4" y1="6" x2="20" y2="6"></line>
+                <line x1="4" y1="18" x2="20" y2="18"></line>
+              </svg>
+            </button>
+
+            <div className={`fixed inset-0 bg-black/50 z-50 transition-opacity ${isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'}`} onClick={() => setIsOpen(false)}>
+              <div className={`absolute right-0 top-0 h-full w-64 bg-navy-light p-6 shadow-xl transform transition-transform ${isOpen ? 'translate-x-0' : 'translate-x-full'}`} onClick={e => e.stopPropagation()}>
+                <div className="flex flex-col space-y-4">
+                  {navItems.map((item) => (
+                    <Link
+                      key={item.name}
+                      to={item.path}
+                      onClick={() => setIsOpen(false)}
+                      className={`px-4 py-2 text-base font-medium transition-colors duration-200 ${
+                        location.pathname === item.path
+                          ? "text-purple"
+                          : "text-white/80 hover:text-white"
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              </div>
+            </div>
 
             <a
               href="/lovable-uploads/resume.pdf"
