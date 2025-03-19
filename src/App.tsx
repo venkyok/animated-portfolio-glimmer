@@ -1,3 +1,4 @@
+
 import { Toaster as DefaultToaster } from "@/components/ui/toaster";
 import { Toaster as SonnerToaster } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -17,21 +18,23 @@ const App = () => (
   <div style={{ position: "relative" }}>
     <QueryClientProvider client={queryClient}>
       <LuminousCursor />
-      <TooltipProvider>
-        <DefaultToaster />
-        <SonnerToaster />
-        <BrowserRouter>
-          <Layout>
-            <Routes>
-              <Route path="/" element={<Index />} />
-              <Route path="/works" element={<Works />} />
-              <Route path="/blog" element={<Blog />} />
-              <Route path="/about" element={<About />} />
-              <Route path="*" element={<NotFound />} />
-            </Routes>
-          </Layout>
-        </BrowserRouter>
-      </TooltipProvider>
+      <div style={{ position: "relative", zIndex: 1 }}>
+        <TooltipProvider>
+          <DefaultToaster />
+          <SonnerToaster />
+          <BrowserRouter>
+            <Layout>
+              <Routes>
+                <Route path="/" element={<Index />} />
+                <Route path="/works" element={<Works />} />
+                <Route path="/blog" element={<Blog />} />
+                <Route path="/about" element={<About />} />
+                <Route path="*" element={<NotFound />} />
+              </Routes>
+            </Layout>
+          </BrowserRouter>
+        </TooltipProvider>
+      </div>
     </QueryClientProvider>
   </div>
 );

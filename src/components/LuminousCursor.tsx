@@ -22,7 +22,7 @@ export function LuminousCursor() {
         width: '100vw',
         height: '100vh',
         pointerEvents: 'none',
-        zIndex: 0,
+        zIndex: -1, // Changed from 0 to -1 to place it behind components
         '--x': `${position.x}px`,
         '--y': `${position.y}px`,
       } as React.CSSProperties}
