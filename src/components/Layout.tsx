@@ -16,7 +16,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
   return (
     <div className="h-screen flex bg-navy">
-
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         <header className="w-full px-4 sm:px-4 pt-12 pb-2">
@@ -34,46 +33,13 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               </button>
               <Link to="/" className="group flex items-center">
                 <div className="w-16 h-16 overflow-hidden rounded-full bg-purple-dark border-2 border-purple transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple/30">
-                <img
-                  src="/lovable-uploads/2d332a00-56ad-4a42-bcfe-8f9d494fbe61.png"
-                  alt="Profile"
-                  className="w-full h-full object-bottom object-cover ml-1"
-                />
-              </div>
-            </Link>
-
-            
-
-            {/* Mobile Menu */}
-            <div 
-              className={`fixed inset-0 bg-black/50 z-50 transition-opacity ${
-                isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
-              }`} 
-              onClick={() => setIsOpen(false)}
-            >
-              <div 
-                className={`absolute left-0 top-0 h-full w-64 bg-navy-light p-6 shadow-xl transform transition-transform ${
-                  isOpen ? 'translate-x-0' : '-translate-x-full'
-                }`} 
-                onClick={e => e.stopPropagation()}
-              >
-                <div className="flex flex-col space-y-4">
-                  {navItems.map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.path}
-                      onClick={() => setIsOpen(false)}
-                      className={`px-4 py-2 text-base font-medium transition-colors duration-200 ${
-                        location.pathname === item.path
-                          ? "text-purple"
-                          : "text-white/80 hover:text-white"
-                      }`}
-                    >
-                      {item.name}
-                    </Link>
-                  ))}
+                  <img
+                    src="/lovable-uploads/2d332a00-56ad-4a42-bcfe-8f9d494fbe61.png"
+                    alt="Profile"
+                    className="w-full h-full object-bottom object-cover ml-1"
+                  />
                 </div>
-              </div>
+              </Link>
             </div>
 
             <a
@@ -87,6 +53,38 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
             </a>
           </div>
         </header>
+
+        {/* Mobile Menu */}
+        <div 
+          className={`fixed inset-0 bg-black/50 z-50 transition-opacity ${
+            isOpen ? 'opacity-100' : 'opacity-0 pointer-events-none'
+          }`} 
+          onClick={() => setIsOpen(false)}
+        >
+          <div 
+            className={`absolute left-0 top-0 h-full w-64 bg-navy-light p-6 shadow-xl transform transition-transform ${
+              isOpen ? 'translate-x-0' : '-translate-x-full'
+            }`} 
+            onClick={e => e.stopPropagation()}
+          >
+            <div className="flex flex-col space-y-4">
+              {navItems.map((item) => (
+                <Link
+                  key={item.name}
+                  to={item.path}
+                  onClick={() => setIsOpen(false)}
+                  className={`px-4 py-2 text-base font-medium transition-colors duration-200 ${
+                    location.pathname === item.path
+                      ? "text-purple"
+                      : "text-white/80 hover:text-white"
+                  }`}
+                >
+                  {item.name}
+                </Link>
+              ))}
+            </div>
+          </div>
+        </div>
 
         <main className="flex-1 overflow-y-auto overflow-x-hidden">
           <div className="w-full px-6 sm:px-4 max-w-7xl mx-auto">
