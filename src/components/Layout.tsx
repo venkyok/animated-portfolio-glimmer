@@ -14,12 +14,39 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <div className="h-screen flex flex-col bg-navy">
-      <div className="w-full px-4 sm:px-4 max-w-7xl mx-auto">
-        <header className="pt-12 pb-2">
-          <div className="flex justify-between items-center">
-            <Link to="/" className="group flex items-center">
-              <div className="w-20 h-20 overflow-hidden rounded-full bg-purple-dark border-2 border-purple transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple/30">
+    <div className="h-screen flex bg-navy">
+      <div className="hidden md:flex flex-col w-64 p-6 bg-navy-light border-r border-white/10">
+        <Link to="/" className="group flex items-center mb-8">
+          <div className="w-16 h-16 overflow-hidden rounded-full bg-purple-dark border-2 border-purple transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple/30">
+            <img
+              src="/lovable-uploads/2d332a00-56ad-4a42-bcfe-8f9d494fbe61.png"
+              alt="Profile"
+              className="w-full h-full object-bottom object-cover ml-1"
+            />
+          </div>
+        </Link>
+        <nav className="flex flex-col space-y-2">
+          {navItems.map((item) => (
+            <Link
+              key={item.name}
+              to={item.path}
+              className={`px-4 py-2 text-base font-medium rounded-lg transition-colors duration-200 ${
+                location.pathname === item.path
+                  ? "bg-purple/10 text-purple"
+                  : "text-white/80 hover:text-white hover:bg-white/5"
+              }`}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
+      </div>
+      <div className="flex-1 flex flex-col">
+        <div className="w-full px-4 sm:px-4">
+          <header className="pt-12 pb-2">
+            <div className="flex justify-between items-center md:justify-end">
+            <Link to="/" className="group flex items-center md:hidden">
+              <div className="w-16 h-16 overflow-hidden rounded-full bg-purple-dark border-2 border-purple transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple/30">
                 <img
                   src="/lovable-uploads/2d332a00-56ad-4a42-bcfe-8f9d494fbe61.png"
                   alt="Profile"
@@ -27,23 +54,6 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                 />
               </div>
             </Link>
-
-            <nav className="hidden md:flex items-center space-x-2">
-              {navItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.path}
-                  className={`nav-link px-4 py-2 text-base font-medium transition-colors duration-200 ${
-                    location.pathname === item.path
-                      ? "text-purple"
-                      : "text-white/80 hover:text-white"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-              <div className="nav-separator mx-2 text-white/20">/</div>
-            </nav>
 
             <button 
               onClick={() => setIsOpen(true)}
