@@ -20,7 +20,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       {/* Main Content */}
       <div className="flex-1 flex flex-col">
         <header className="w-full px-4 sm:px-4 pt-12 pb-2">
-          <div className="flex justify-between items-center md:justify-end">
+          <div className="flex justify-between items-center">
             <Link to="/" className="group flex items-center">
               <div className="w-16 h-16 overflow-hidden rounded-full bg-purple-dark border-2 border-purple transition-all duration-300 group-hover:shadow-lg group-hover:shadow-purple/30">
                 <img
@@ -33,7 +33,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
 
             <button 
               onClick={() => setIsOpen(true)}
-              className="p-2 text-white hover:text-purple transition-colors"
+              className="md:hidden p-2 text-white hover:text-purple transition-colors"
             >
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                 <line x1="4" y1="12" x2="20" y2="12"></line>
@@ -50,8 +50,8 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               onClick={() => setIsOpen(false)}
             >
               <div 
-                className={`absolute right-0 top-0 h-full w-64 bg-navy-light p-6 shadow-xl transform transition-transform ${
-                  isOpen ? 'translate-x-0' : 'translate-x-full'
+                className={`absolute left-0 top-0 h-full w-64 bg-navy-light p-6 shadow-xl transform transition-transform ${
+                  isOpen ? 'translate-x-0' : '-translate-x-full'
                 }`} 
                 onClick={e => e.stopPropagation()}
               >
