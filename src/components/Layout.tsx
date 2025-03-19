@@ -51,7 +51,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
                     location.pathname === item.path
                       ? "text-purple"
                       : "text-white/80 hover:text-white"
-                  } after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-purple after:transition-all after:duration-300 hover:after:w-full`}
+                  } hover:after:w-full after:absolute after:bottom-0 after:left-0 after:h-[2px] after:w-0 after:bg-purple after:transition-all after:duration-300`}
                 >
                   {item.name}
                 </Link>
