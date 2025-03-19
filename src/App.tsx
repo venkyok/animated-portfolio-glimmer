@@ -15,7 +15,7 @@ import { LuminousCursor } from "./components/LuminousCursor";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <div style={{ position: "relative" }}>
+  <div style={{ position: "relative", overflow: "hidden", minHeight: "100vh" }}>
     <QueryClientProvider client={queryClient}>
       <LuminousCursor />
       <div style={{ position: "relative", zIndex: 1 }}>
