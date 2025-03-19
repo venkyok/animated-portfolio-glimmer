@@ -100,7 +100,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
         )}
 
         <main className="flex-1 overflow-y-auto overflow-x-hidden">
-          <div className="w-full px-6 sm:px-4 max-w-7xl mx-auto">
+          <div className="w-full px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl mx-auto">
             {children}
             <footer className="py-6 mt-2 text-center text-white/40 text-sm">
               <p>© {new Date().getFullYear()} Ammati Venkatesh</p>
