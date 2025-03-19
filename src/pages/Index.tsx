@@ -40,20 +40,20 @@ const Index = () => {
       </div>
 
       {/* Hero section */}
-      <section ref={heroRef} className="relative z-10 h-[calc(100vh-80px)] px-4 sm:px-4 max-w-7xl mx-auto flex items-center">
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-18 items-center w-full">
+      <section ref={heroRef} className="relative z-10 min-h-[calc(100vh-80px)] px-4 sm:px-4 max-w-7xl mx-auto flex items-center py-12">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 md:gap-18 items-center w-full">
           <motion.div 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5 }}
             className="space-y-6 lg:pr-12"
           >
-            <div className="space-y-2">
+            <div className="space-y-4">
               <motion.h1 
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.5, delay: 0.2 }}
-                className="text-5xl md:text-6xl font-bold"
+                className="text-4xl sm:text-5xl md:text-6xl font-bold"
               >
                 <span className="text-yellow-400">Hello</span> 
                 <span className="text-yellow-400">👋</span>,

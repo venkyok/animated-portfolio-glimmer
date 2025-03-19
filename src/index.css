@@ -245,8 +245,18 @@
 }
 
 .giant-text {
-  font-size: 15vw;
+  font-size: clamp(4rem, 15vw, 20rem);
   opacity: 0.05;
   font-weight: 800;
   letter-spacing: -3px;
+}
+
+@media (max-width: 640px) {
+  .project-card img {
+    height: 200px;
+  }
+  
+  body {
+    overflow-x: hidden;
+  }
 }

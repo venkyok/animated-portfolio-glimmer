@@ -18,7 +18,7 @@ const Blog = () => {
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.5, delay: 0.2 }}
-        className="max-w-3xl mx-auto bg-navy-light rounded-3xl p-8 md:p-12"
+        className="max-w-3xl mx-auto bg-navy-light rounded-3xl p-6 md:p-12 mx-4 sm:mx-6 md:mx-auto"
       >
         <div className="mb-10">
           <h2 className="text-2xl font-bold mb-6 text-purple">Technical Skills</h2>
