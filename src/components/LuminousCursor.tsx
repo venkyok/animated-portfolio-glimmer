@@ -2,31 +2,42 @@
 import { useEffect, useState } from 'react';
 
 export function LuminousCursor() {
-  const [position, setPosition] = useState({ x: -100, y: -100 });
+  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
     const handleMove = (e: MouseEvent) => {
       setPosition({ x: e.clientX, y: e.clientY });
+      if (!isVisible) setIsVisible(true);
+    };
+
+    const handleLeave = () => {
+      setIsVisible(false);
     };
 
     window.addEventListener('mousemove', handleMove);
-    return () => window.removeEventListener('mousemove', handleMove);
-  }, []);
+    document.addEventListener('mouseleave', handleLeave);
+    
+    return () => {
+      window.removeEventListener('mousemove', handleMove);
+      document.removeEventListener('mouseleave', handleLeave);
+    };
+  }, [isVisible]);
+
+  if (!isVisible) return null;
 
   return (
-    <div 
+    <div
+      className="cursor-glow"
       style={{
         position: 'fixed',
-        top: '0',
-        left: '0',
-        width: '100vw',
-        height: '100vh',
+        top: 0,
+        left: 0,
+        width: '100%',
+        height: '100%',
         pointerEvents: 'none',
-        zIndex: -1, // Keep it behind all components
-        '--x': `${position.x}px`,
-        '--y': `${position.y}px`,
-      } as React.CSSProperties}
-      className="cursor-glow"
+        transform: `translate(${position.x}px, ${position.y}px)`,
+      }}
     />
   );
 }
