@@ -15,10 +15,10 @@ import { LuminousCursor } from "./components/LuminousCursor";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <div className="relative min-h-screen overflow-hidden">
-    <QueryClientProvider client={queryClient}>
-      <LuminousCursor />
-      <div className="relative z-10">
+  <>
+    <LuminousCursor />
+    <div className="relative z-10 min-h-screen overflow-hidden">
+      <QueryClientProvider client={queryClient}>
         <TooltipProvider>
           <DefaultToaster />
           <SonnerToaster />
@@ -34,9 +34,9 @@ const App = () => (
             </Layout>
           </BrowserRouter>
         </TooltipProvider>
-      </div>
-    </QueryClientProvider>
-  </div>
+      </QueryClientProvider>
+    </div>
+  </>
 );
 
 export default App;

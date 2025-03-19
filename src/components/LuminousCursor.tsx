@@ -1,42 +1,51 @@
 
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 
 export function LuminousCursor() {
-  const [position, setPosition] = useState({ x: 0, y: 0 });
+  const cursorRef = useRef<HTMLDivElement>(null);
   const [isVisible, setIsVisible] = useState(false);
 
   useEffect(() => {
-    const handleMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-      if (!isVisible) setIsVisible(true);
+    const cursor = cursorRef.current;
+    if (!cursor) return;
+
+    const handleMouseMove = (e: MouseEvent) => {
+      requestAnimationFrame(() => {
+        if (cursor) {
+          // Set the cursor to be centered around the mouse
+          const x = e.clientX - cursor.offsetWidth / 2;
+          const y = e.clientY - cursor.offsetHeight / 2;
+          cursor.style.transform = `translate(${x}px, ${y}px)`;
+          
+          if (!isVisible) setIsVisible(true);
+        }
+      });
     };
 
-    const handleLeave = () => {
+    const handleMouseLeave = () => {
       setIsVisible(false);
     };
 
-    window.addEventListener('mousemove', handleMove);
-    document.addEventListener('mouseleave', handleLeave);
-    
+    document.addEventListener('mousemove', handleMouseMove);
+    document.addEventListener('mouseleave', handleMouseLeave);
+
     return () => {
-      window.removeEventListener('mousemove', handleMove);
-      document.removeEventListener('mouseleave', handleLeave);
+      document.removeEventListener('mousemove', handleMouseMove);
+      document.removeEventListener('mouseleave', handleMouseLeave);
     };
   }, [isVisible]);
 
-  if (!isVisible) return null;
-
   return (
-    <div
-      className="cursor-glow"
+    <div 
+      ref={cursorRef}
+      className={`custom-cursor-glow ${isVisible ? 'visible' : 'hidden'}`}
       style={{
         position: 'fixed',
+        pointerEvents: 'none',
+        zIndex: -1,
         top: 0,
         left: 0,
-        width: '100%',
-        height: '100%',
-        pointerEvents: 'none',
-        transform: `translate(${position.x}px, ${position.y}px)`,
+        transition: 'opacity 0.3s ease',
       }}
     />
   );
