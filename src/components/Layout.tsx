@@ -19,7 +19,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
       <div className="flex-1 flex flex-col">
         <header className="w-full px-4 sm:px-4 pt-12 pb-2">
           <div className="flex justify-between items-center">
-            <div className="flex items-center gap-4">
+            <div className="flex items-center gap-8">
               <button 
                 onClick={() => setIsOpen(true)}
                 className="md:hidden p-2 text-white hover:text-purple transition-colors"
@@ -42,7 +42,7 @@ const Layout: React.FC<{ children: React.ReactNode }> = ({ children }) => {
               </Link>
             </div>
 
-            <nav className="hidden md:flex items-center gap-6">
+            <nav className="hidden md:flex items-center gap-12">
               {navItems.map((item) => (
                 <Link
                   key={item.name}
